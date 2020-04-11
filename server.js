@@ -4,6 +4,11 @@ const connectDB = require("./config/db");
 
 //Connect DB
 connectDB();
+
+// init middleware Body Pharser
+app.use(express.json({ extended: false }));
+
+// root Route
 app.get("/", (req, res) => res.send("Server is Already Running"));
 
 // define route

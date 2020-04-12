@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 const gravatar = require("gravatar");
 const { check, validationResult } = require("express-validator");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const config = require("config");
 
 //Model
 const User = require("../../model/User");
@@ -32,7 +34,6 @@ router.post(
 
     try {
       //see if user exist
-      console.log("Users", User);
       let user = await User.findOne({ email });
 
       if (user) {
@@ -61,7 +62,22 @@ router.post(
 
       //return jsonwebtoken
 
-      res.send("User Registered");
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+
+      jwt.sign(
+        payload,
+        config.get("jwtSecret"),
+        { expiresIn: 360000 },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
+      // res.send("User Registered");
     } catch (error) {
       console.log(error.message);
       res.status(500).send("server Error");

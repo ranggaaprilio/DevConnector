@@ -1,0 +1,25 @@
+
+.group-signUP{
+    margin: 20px;
+}
+
+.Bagi-su{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 59px;
+    height: 100%;
+}
+
+.left-side-su{
+    position: relative;
+    width: 50%;
+    background-image: url('../img/signup-banner.jpg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+}
+
+.right-side-su{
+    padding-right: 80px;
+    padding-top: 50px;
+}

@@ -10,8 +10,7 @@ const checkObjectId = require('../../middleware/checkObjectId');
 // @route    POST api/posts
 // @desc     Create a post
 // @access   Private
-router.post(
-  '/',
+router.post('/',
   [auth, [check('text', 'Text is required').not().isEmpty()]],
   async (req, res) => {
     const errors = validationResult(req);

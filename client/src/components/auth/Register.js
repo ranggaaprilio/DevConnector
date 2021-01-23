@@ -4,6 +4,11 @@ import { Link, Redirect } from 'react-router-dom';
 import { setAlert } from '../../actions/alert';
 import { register } from '../../actions/auth';
 import PropTypes from 'prop-types';
+import {
+  FacebookLoginButton,
+  GoogleLoginButton,
+  GithubLoginButton,
+} from "react-social-login-buttons";
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -33,7 +38,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Sign Up</h1>
+    <div className="Bagi-su">
+    <div className="left-side-su">
+    </div >
+    <div className="right-side-su">
+    <h1 className="large text-primary">Sign Up</h1>
       <p className="lead">
         <i className="fas fa-user" /> Create Your Account
       </p>
@@ -80,9 +89,23 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
+      <div className="group-signUP">
+      <FacebookLoginButton align="center" onClick={() => alert("Hello")}>
+        <span>Sign up with Facebook</span>
+      </FacebookLoginButton>
+      <GoogleLoginButton  align="center" onClick={() => alert("Hello")}>
+        <span>Sign up with Google</span>
+      </GoogleLoginButton>
+      <GithubLoginButton align="center" onClick={() => alert("Hello")}>
+        <span>Sign up with Github</span>
+      </GithubLoginButton>
+      </div>
+      
       <p className="my-1">
         Already have an account? <Link to="/login">Sign In</Link>
       </p>
+    </div>
+    </div> 
     </Fragment>
   );
 };

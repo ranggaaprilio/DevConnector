@@ -18,7 +18,8 @@ app.use("/api/posts", require("./Routes/API/post"));
 app.use("/api/profile", require("./Routes/API/profile"));
 
 const PORT = process.env.PORT || 5000;
+const HOST = '0.0.0.0';
 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT} `);
+app.listen(PORT, HOST,() => {
+  console.log(`App listening on port ${HOST}:${PORT} `);
 });

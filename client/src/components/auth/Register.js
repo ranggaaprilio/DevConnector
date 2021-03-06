@@ -38,6 +38,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
+    <div className="m-view">
     <div className="Bagi-su">
     <div className="left-side-su">
     </div >
@@ -106,6 +107,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       </p>
     </div>
     </div> 
+    </div>
     </Fragment>
   );
 };

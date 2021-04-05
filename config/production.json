@@ -1,5 +1,5 @@
 {
     "mongoURI": "mongodb+srv://rangga:april0498@devconnector-e6xpt.mongodb.net/test?retryWrites=true&w=majority",
     "jwtSecret": "aprilio",
-    "githubToken": "98ec981d30f054b7db8d2a8a0026548c911b6df4"
+    "githubToken": "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"
 }

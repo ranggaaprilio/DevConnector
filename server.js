@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const router = express.Router();
 const connectDB = require("./config/db");
 const path =require('path');
 
@@ -13,6 +14,7 @@ app.use(express.json({ extended: false }));
 // app.get("/", (req, res) => res.send("Server is Already Running"));
 
 // define route
+app.use("/", require("./Routes/index"));
 app.use("/api/users", require("./Routes/API/users"));
 app.use("/api/auth", require("./Routes/API/auth"));
 app.use("/api/posts", require("./Routes/API/post"));
